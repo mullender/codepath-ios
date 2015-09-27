@@ -26,7 +26,9 @@ class TipCalculatorTests: XCTestCase {
     func testTipValue() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let tipCalc = ExactTipCalculator(total: 110.0, taxPct: 0.1)
+        let tipCalc = ExactTipCalculator()
+        tipCalc.total = 110
+        tipCalc.taxPct = 0.1
         let tips = tipCalc.returnPossibleTips()
         XCTAssertEqual(tips[20], 20.0)
         
@@ -36,7 +38,9 @@ class TipCalculatorTests: XCTestCase {
         // This is an example of a performance test case.
         self.measureBlock {
             // Put the code you want to measure the time of here.
-            let tipCalc = ExactTipCalculator(total: 100.0, taxPct: 0.1)
+            let tipCalc = ExactTipCalculator()
+            tipCalc.total = 110
+            tipCalc.taxPct = 0.1
             tipCalc.returnPossibleTips()
         }
     }
