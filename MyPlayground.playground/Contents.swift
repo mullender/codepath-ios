@@ -44,3 +44,5 @@ class ExactTipCalculator {
 // 6
 let tipCalc = ExactTipCalculator(total: 33.25, taxPct: 0.09)
 tipCalc.returnPossibleTips()
+print(String(format: "a float number: %.1f%%", 10.08))
+print(strtod("www",nil))
