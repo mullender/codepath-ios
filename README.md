@@ -26,4 +26,5 @@ Features:
 Walkthrough of the features:
 ---
 Note the rounding of the different amounts.
+
 <img src="tipper.gif" />
