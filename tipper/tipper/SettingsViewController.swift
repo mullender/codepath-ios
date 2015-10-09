@@ -12,9 +12,6 @@ import Foundation
 class SettingsViewController: UIViewController {
     @IBOutlet var tipTypeSegmentedControl : UISegmentedControl!
  
-    
-    let tipCalc = ExactTipCalculator()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = NSUserDefaults.standardUserDefaults()

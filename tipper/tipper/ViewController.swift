@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var taxPctLabel : UILabel!
     @IBOutlet var resultsTextView : UITextView!
     
-    let tipCalc = ExactTipCalculator()
+    let tipCalc = TipCalculator()
     
     override func viewDidLoad() {
         super.viewDidLoad()

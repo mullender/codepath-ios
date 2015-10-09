@@ -23,26 +23,40 @@ class TipCalculatorTests: XCTestCase {
         super.tearDown()
     }
     
-    func testTipValue() {
+    func testTipValueExact() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let tipCalc = ExactTipCalculator()
-        tipCalc.total = 110
-        tipCalc.taxPct = 0.1
-        let tips = tipCalc.returnPossibleTips()
-        XCTAssertEqual(tips[20], 20.0)
-        
+        let tipCalc = TipCalculator()
+        tipCalc.total = 99.97
+        tipCalc.tax = 8.0
+        let tip = tipCalc.calcTipExact(20)
+        XCTAssertEqualWithAccuracy(tip, 18.394, accuracy: 0.001)
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {
             // Put the code you want to measure the time of here.
-            let tipCalc = ExactTipCalculator()
+            let tipCalc = TipCalculator()
             tipCalc.total = 110
-            tipCalc.taxPct = 0.1
+            tipCalc.tax = 10
             tipCalc.returnPossibleTips()
         }
     }
     
+    func testTipValueRoundTip() {
+        let tipCalc = TipCalculator()
+        tipCalc.total = 99.97
+        tipCalc.tax = 8.0
+        let tip = tipCalc.calcTipRoundTip(20)
+        XCTAssertEqualWithAccuracy(tip, 18.0, accuracy: 0.001)
+    }
+    func testTipValueRoundGrandTotal() {
+        let tipCalc = TipCalculator()
+        tipCalc.total = 99.97
+        tipCalc.tax = 8.0
+        let tip = tipCalc.calcTipRoundGrandTotal(20)
+        XCTAssertEqualWithAccuracy(tip, 18.03, accuracy: 0.001)
+    }
+
 }

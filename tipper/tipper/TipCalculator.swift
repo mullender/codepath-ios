@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ExactTipCalculator {
+class TipCalculator {
     
     var total: Double = 0.0
     var tax: Double = 0.0
@@ -21,15 +21,15 @@ class ExactTipCalculator {
     private let possibleTipsInferred = [12.5, 15.0, 17.5, 20.0]
 
     
-    private func calcTipExact(tipPct: Double) -> Double {
+    internal func calcTipExact(tipPct: Double) -> Double {
         return subtotal * tipPct/100.0
     }
     
-    private func calcTipRoundGrandTotal(tipPct: Double) -> Double {
+    internal func calcTipRoundGrandTotal(tipPct: Double) -> Double {
         return round(total+(subtotal * tipPct/100.0))-total
     }
     
-    private func calcTipRoundTip(tipPct: Double) -> Double {
+    internal func calcTipRoundTip(tipPct: Double) -> Double {
         return round(subtotal * tipPct/100.0)
     }
     
