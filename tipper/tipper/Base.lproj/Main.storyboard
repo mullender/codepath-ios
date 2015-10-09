@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mBG-oy-bhU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tipper-->
@@ -25,8 +26,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r9T-iU-j9B">
-                                <rect key="frame" x="272" y="139" width="57" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r9T-iU-j9B">
+                                <rect key="frame" x="272" y="139" width="77" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Zbw-n6-iLk"/>
                                 </constraints>
@@ -37,8 +38,8 @@
                                     <action selector="taxValueChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="KDU-vK-Bw9"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10.00" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1l-fm-Gey">
-                                <rect key="frame" x="272" y="94" width="57" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="99.97" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1l-fm-Gey">
+                                <rect key="frame" x="272" y="94" width="77" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6DH-4u-SGs"/>
                                 </constraints>
@@ -49,12 +50,6 @@
                                     <action selector="totalValueChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="zUJ-Xb-jiC"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1000%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xu-SF-YMV">
-                                <rect key="frame" x="344" y="145" width="52" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tax" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8m-uv-zks">
                                 <rect key="frame" x="230" y="145" width="27" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -64,9 +59,15 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hO6-CA-wu2">
                                 <rect key="frame" x="15" y="184" width="570" height="401"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1000%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xu-SF-YMV">
+                                <rect key="frame" x="357" y="145" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -91,7 +92,13 @@
                             <outletCollection property="gestureRecognizers" destination="DyX-wO-73l" appends="YES" id="LDX-ns-CQM"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tipper" id="Kai-pY-3F2"/>
+                    <navigationItem key="navigationItem" title="Tipper" id="Kai-pY-3F2">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="qLv-tS-vVn">
+                            <connections>
+                                <segue destination="qix-dS-8FL" kind="show" id="XWT-kG-A6l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="resultsTextView" destination="hO6-CA-wu2" id="NXw-gc-nOP"/>
                         <outlet property="taxPctLabel" destination="2xu-SF-YMV" id="B5E-pz-nnD"/>
@@ -107,6 +114,45 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1151" y="351"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="gYo-5l-bbc">
+            <objects>
+                <viewController id="qix-dS-8FL" customClass="SettingsViewController" customModule="tipper" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JHZ-27-PQf"/>
+                        <viewControllerLayoutGuide type="bottom" id="UgR-sl-93H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="abG-TJ-3wM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IHf-tc-44b">
+                                <rect key="frame" x="20" y="72" width="560" height="29"/>
+                                <segments>
+                                    <segment title="All Cash"/>
+                                    <segment title="Cash Tip"/>
+                                    <segment title="Exact"/>
+                                </segments>
+                                <connections>
+                                    <action selector="TipTypeChanged:" destination="qix-dS-8FL" eventType="valueChanged" id="6fS-YA-GkV"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IHf-tc-44b" firstAttribute="trailing" secondItem="abG-TJ-3wM" secondAttribute="trailingMargin" constant="8" id="Nyv-6O-zoD"/>
+                            <constraint firstItem="IHf-tc-44b" firstAttribute="leading" secondItem="abG-TJ-3wM" secondAttribute="leadingMargin" constant="8" id="fpH-EB-7ig"/>
+                            <constraint firstItem="IHf-tc-44b" firstAttribute="top" secondItem="JHZ-27-PQf" secondAttribute="bottom" constant="8" id="rcE-rx-548"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tipTypeSegmentedControl" destination="IHf-tc-44b" id="pyr-6s-mof"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b2a-K9-u8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863" y="351"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lrz-86-8b5">

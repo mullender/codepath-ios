@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         updateUI()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        updateUI()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,20 +33,21 @@ class ViewController: UIViewController {
     }
 
     func updateUI() {
-        tipCalc.total = strtod(totalTextField.text!, nil)
-        let taxAmount = strtod(taxTextField.text!,nil)
-        tipCalc.taxPct = tipCalc.total > 0 ? taxAmount/tipCalc.total : 0.0
-        taxPctLabel.text = String(format: "%.1f%%",tipCalc.taxPct*100.0)
+        tipCalc.total = strtod(totalTextField.text!, nil) ?? 1.0
+        tipCalc.tax = strtod(taxTextField.text!,nil) ?? 0.0
+        taxPctLabel.text = String(format: "%.1f%%",100 * tipCalc.tax/tipCalc.subtotal)
         
         let possibleTips = tipCalc.returnPossibleTips()
-        var results = ""
-        for (tipPct, tipValue) in possibleTips {
-            let tipPctStr = String(format: "%.1f",Double(tipPct))
-            let tipValStr = String(format: "%.2f",tipValue)
+        var results = "tip-%      tip  total+tip\n"+"=========================\n"
+        for tipValue in possibleTips {
+            let tipPct = tipValue/tipCalc.subtotal * 100
+            let tipPctStr = String(format: "%4.1f",tipPct)
+            let tipValStr = String(format: "%7.2f",tipValue)
+            let totalValStr = String(format: "%9.2f",tipValue+tipCalc.total)
 
-            results += "\(tipPctStr)%: \(tipValStr)\n"
+            
+            results += "\(tipPctStr)%  \(tipValStr)  \(totalValStr)\n"
         }
-        // 5
         resultsTextView.text = results
         
     }
